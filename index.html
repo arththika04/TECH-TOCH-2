@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Media & Our Daily Life - Tech Talk</title>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #ec4899;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-color: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+            padding: 4rem;
+            flex-direction: column;
+        }
+
+        .col { display: flex; flex-direction: column; }
+        .center { justify-content: center; align-items: center; text-align: center; }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.3rem; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+        .text-xl { font-size: 1.25rem; }
+        .text-lg { font-size: 1.1rem; }
+        .text-md { font-size: 1rem; }
+        .text-sm { font-size: 0.85rem; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .bullet-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 72, 153, 0.06) 100%);
+            border: 2px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .timeline-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .timeline-circle {
+            width: 2.6rem;
+            height: 2.6rem;
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
