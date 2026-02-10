@@ -5,15 +5,15 @@
     <title>Social Media & Our Daily Life - Tech Talk</title>
     <style>
         :root {
-            --primary-color: #6366f1;
-            --secondary-color: #ec4899;
-            --accent-color: #f59e0b;
-            --success-color: #10b981;
-            --danger-color: #ef4444;
+            --primary-color: #0d9488;
+            --secondary-color: #f43f5e;
+            --accent-color: #d97706;
+            --success-color: #059669;
+            --info-color: #0891b2;
             --light-bg: #f8fafc;
             --card-bg: #ffffff;
             --text-primary: #1e293b;
-            --text-secondary: #64748b;
+            --text-secondary: #475569;
             --text-muted: #94a3b8;
             --border-color: #e2e8f0;
         }
@@ -22,7 +22,7 @@
 
         body {
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            background: linear-gradient(135deg, #f0fdf9 0%, #ecfdf5 100%);
             color: var(--text-primary);
             overflow-x: hidden;
         }
@@ -35,10 +35,10 @@
             flex-shrink: 0;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
-            padding: 4rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(13, 148, 136, 0.1);
+            padding: 3.5rem 4rem;
             flex-direction: column;
         }
 
@@ -52,8 +52,8 @@
         }
 
         h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.3rem; margin-bottom: 1.5rem; }
-        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 2.2rem; margin-bottom: 1.3rem; }
+        h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
 
         .text-xl { font-size: 1.25rem; }
         .text-lg { font-size: 1.1rem; }
@@ -61,7 +61,7 @@
         .text-sm { font-size: 0.85rem; }
 
         .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, #0d9488 0%, #f43f5e 50%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -75,7 +75,7 @@
         }
 
         .bullet-list li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
             padding-left: 1.8rem;
             position: relative;
             color: var(--text-secondary);
@@ -85,47 +85,57 @@
         }
 
         .bullet-list li::before {
-            content: "✓";
+            content: "◆";
             position: absolute;
             left: 0;
-            color: var(--success-color);
+            color: var(--primary-color);
             font-weight: 700;
+            font-size: 0.7rem;
+            top: 0.35rem;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 72, 153, 0.06) 100%);
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(244, 63, 94, 0.05) 100%);
             border: 2px solid var(--primary-color);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
-            margin-bottom: 1.5rem;
+            padding: 1.4rem;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.08);
+            margin-bottom: 1.3rem;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-color);
         }
 
         .card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
             border: 2px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+            padding: 1.3rem;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.06);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
         }
 
         .card-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .timeline-step {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.9rem;
             align-items: flex-start;
         }
 
         .timeline-circle {
-            width: 2.6rem;
-            height: 2.6rem;
-            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
             border-radius: 999px;
             display: flex;
             align-items: center;
@@ -134,34 +144,88 @@
             font-weight: 700;
             font-size: 1rem;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
         }
-.table {
+
+        .timeline-content h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-right: 0.4rem;
+            margin-top: 0.3rem;
+        }
+
+        .tag-teal { background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4; }
+        .tag-coral { background: #ffe4e6; color: #be123c; border: 1px solid #fecdd3; }
+        .tag-gold { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+        .tag-blue { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+        .table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-size: 0.88rem;
         }
 
         .table th, .table td {
             border: 1px solid #e2e8f0;
-            padding: 0.5rem 0.75rem;
+            padding: 0.45rem 0.7rem;
             text-align: left;
         }
 
         .table th {
-            background: #eff6ff;
-            color: #1e293b;
+            background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, #0d9488 0%, #f43f5e 50%, #d97706 100%);
+            border: none;
+            border-radius: 2px;
+            margin: 1rem 0;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(244, 63, 94, 0.06) 100%);
+            border-left: 5px solid var(--accent-color);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 14px 14px 0;
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-weight: 600;
         }
     </style>
-    </head>
+</head>
 <body>
 
     <!-- Slide 1: Title -->
-    <section class="slide col center">
-        <h1 class="gradient-text" style="font-size: 3.8rem; margin-bottom: 1rem;">Social Media & Our Daily Life</h1>
+    <section class="slide col center" style="background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fff1f2 100%);">
+        <h1 class="gradient-text" style="font-size: 3.6rem; margin-bottom: 1rem;">Social Media & Our Daily Life</h1>
         <p class="text-xl" style="color:#1e293b; font-weight:600; margin-bottom:0.75rem;">How Instagram, WhatsApp, YouTube shape the way we live</p>
-        <p class="text-md" style="color:#64748b; margin-bottom:2rem;">Simple look at the positive and negative impact of social media</p>
-        <p class="text-sm" style="color:#94a3b8;">Tech Talk • Social Media Impact</p>
+        <hr class="divider" style="width: 200px;">
+        <p class="text-md" style="color:#475569; margin-top:0.75rem; margin-bottom:1.5rem;">A simple look at the good, the bad and the smart way to use social media</p>
+        <div>
+            <span class="tag tag-teal">Tech Talk</span>
+            <span class="tag tag-coral">Social Media</span>
+            <span class="tag tag-gold">Impact</span>
+        </div>
     </section>
 
     <!-- Slide 2: What is Social Media -->
@@ -170,14 +234,15 @@
         <div class="highlight-box">
             <h3>Simple Definition</h3>
             <p class="text-md" style="color:#475569; margin-top:0.4rem;">
-                Social media are online platforms where people create, share and interact with content and others.
+                Online platforms where people create, share and interact with content and each other – anytime, anywhere.
             </p>
         </div>
         <ul class="bullet-list">
-            <li>Apps and websites used to connect with friends, family and the world.</li>
-            <li>Examples: WhatsApp, Instagram, YouTube, Snapchat, Facebook, X (Twitter).</li>
-            <li>We can share photos, videos, messages, stories and live streams instantly.</li>
-            <li>Anyone can become a creator – not just big companies.</li>
+            <li>Apps and websites used to connect, communicate and share with the world.</li>
+            <li>Examples: WhatsApp, Instagram, YouTube, Snapchat, Facebook, TikTok, X (Twitter).</li>
+            <li>Share photos, videos, messages, stories and live streams in seconds.</li>
+            <li>Anyone can be a creator – not just big companies or celebrities.</li>
+            <li>Over 5 billion people worldwide use social media today.</li>
         </ul>
     </section>
 
@@ -186,57 +251,283 @@
         <h2 class="gradient-text">Why Do We Use Social Media? 🤳</h2>
         <div class="card-grid">
             <div class="card">
-                <h3>Stay Connected</h3>
+                <h3>🤝 Stay Connected</h3>
                 <ul class="bullet-list">
                     <li>Chat with friends and family anytime, anywhere.</li>
                     <li>Share moments through photos, stories and status.</li>
-                    <li>Join groups and communities with similar interests.</li>
+                    <li>Join groups with similar interests.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Entertainment</h3>
+                <h3>🎬 Entertainment</h3>
                 <ul class="bullet-list">
-                    <li>Short videos, memes, music, gaming clips and vlogs.</li>
-                    <li>Endless scrolling when we feel bored or stressed.</li>
+                    <li>Short videos, memes, music, gaming clips.</li>
+                    <li>Reels and shorts – endless scrolling.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Information & Learning</h3>
+                <h3>📚 Information & Learning</h3>
                 <ul class="bullet-list">
                     <li>News, tech updates, sports highlights.</li>
-                    <li>Study tips, coding videos, exam strategies, tutorials.</li>
+                    <li>Study tips, coding tutorials, exam strategies.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Opportunities</h3>
+                <h3>🚀 Opportunities</h3>
                 <ul class="bullet-list">
-                    <li>Showcase talents (art, music, editing, coding, gaming).</li>
-                    <li>Build personal brand, find jobs, clients and collaborations.</li>
+                    <li>Showcase talents (art, music, coding, gaming).</li>
+                    <li>Build personal brand, find jobs and clients.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: Positive Impacts -->
+    <!-- Slide 4: Popular Platforms -->
     <section class="slide col">
+        <h2 class="gradient-text">Popular Social Media Platforms 📲</h2>
+        <table class="table">
+            <tr>
+                <th>Platform</th>
+                <th>Main Use</th>
+                <th>Content Type</th>
+            </tr>
+            <tr>
+                <td><strong>WhatsApp</strong></td>
+                <td>Messaging, calls, groups</td>
+                <td>Text, voice, video, files</td>
+            </tr>
+            <tr>
+                <td><strong>Instagram</strong></td>
+                <td>Photo/video sharing, reels</td>
+                <td>Images, stories, short videos</td>
+            </tr>
+            <tr>
+                <td><strong>YouTube</strong></td>
+                <td>Video streaming, learning</td>
+                <td>Long/short videos, livestreams</td>
+            </tr>
+            <tr>
+                <td><strong>Facebook</strong></td>
+                <td>Social networking, groups</td>
+                <td>Posts, events, marketplace</td>
+            </tr>
+            <tr>
+                <td><strong>X (Twitter)</strong></td>
+                <td>News, opinions, trends</td>
+                <td>Short text, images, threads</td>
+            </tr>
+            <tr>
+                <td><strong>TikTok</strong></td>
+                <td>Short video entertainment</td>
+                <td>15s–10min creative videos</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Slide 5: Positive Impacts -->
+    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);">
         <h2 class="gradient-text">Positive Impact of Social Media 👍</h2>
         <ul class="bullet-list">
-            <li><strong>Easy communication:</strong> Distance doesn’t matter – instant messages and video calls.</li>
-            <li><strong>Learning made simple:</strong> Free access to tutorials, courses, and educational content.</li>
-            <li><strong>Opportunities:</strong> Online businesses, freelancing, content creation and networking.</li>
-            <li><strong>Awareness:</strong> Social issues, health tips, career guidance and global news spread faster.</li>
-            <li><strong>Support & motivation:</strong> Communities for fitness, mental health, hobbies and goals.</li>
+            <li><strong style="color:#0d9488;">Easy Communication:</strong> Distance doesn't matter – instant messages and video calls.</li>
+            <li><strong style="color:#0d9488;">Learning Made Simple:</strong> Free access to tutorials, courses and educational content.</li>
+            <li><strong style="color:#0d9488;">Career Opportunities:</strong> Online businesses, freelancing, content creation, networking.</li>
+            <li><strong style="color:#0d9488;">Global Awareness:</strong> Social issues, health tips, career guidance spread faster.</li>
+            <li><strong style="color:#0d9488;">Support Communities:</strong> Groups for fitness, mental health, hobbies and motivation.</li>
+            <li><strong style="color:#0d9488;">Voice for Everyone:</strong> Anyone can share opinions, art and ideas with the world.</li>
         </ul>
     </section>
 
-    <!-- Slide 5: Negative Impacts -->
-    <section class="slide col">
+    <!-- Slide 6: Negative Impacts -->
+    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #fff1f2 100%);">
         <h2 class="gradient-text">Negative Impact of Social Media 👎</h2>
         <ul class="bullet-list">
-            <li><strong>Addiction & time waste:</strong> “Just 5 minutes” scrolling becomes 1–2 hours easily.</li>
-            <li><strong>Comparison:</strong> Seeing “perfect” lives online can reduce self‑confidence.</li>
-            <li><strong>Sleep problems:</strong> Late‑night scrolling disturbs sleep and concentration next day.</li>
-            <li><strong>Fake news:</strong> Wrong information spreads fast if we share without checking.</li>
-            <li><strong>Cyberbullying:</strong> Negative comments, trolling and online harassment.</li>
+            <li><strong style="color:#f43f5e;">Addiction & Time Waste:</strong> "Just 5 minutes" scrolling easily becomes 1–2 hours.</li>
+            <li><strong style="color:#f43f5e;">Comparison Trap:</strong> Seeing "perfect" lives online reduces self‑confidence.</li>
+            <li><strong style="color:#f43f5e;">Sleep Problems:</strong> Late‑night scrolling disturbs sleep and next‑day focus.</li>
+            <li><strong style="color:#f43f5e;">Fake News:</strong> Wrong information spreads fast when shared without verifying.</li>
+            <li><strong style="color:#f43f5e;">Cyberbullying:</strong> Negative comments, trolling and online harassment.</li>
+            <li><strong style="color:#f43f5e;">Privacy Risks:</strong> Personal data collected and sometimes misused.</li>
         </ul>
     </section>
+
+    <!-- Slide 7: Social Media & Mental Health -->
+    <section class="slide col">
+        <h2 class="gradient-text">Social Media & Mental Health 🧠</h2>
+        <div class="card-grid">
+            <div class="card" style="border-color: #fecdd3;">
+                <h3 style="color:#f43f5e;">⚠️ Possible Problems</h3>
+                <ul class="bullet-list">
+                    <li>Too much use linked with stress, anxiety and low mood.</li>
+                    <li>Constantly checking likes/comments creates pressure.</li>
+                    <li>FOMO – Fear Of Missing Out.</li>
+                    <li>Cyberbullying affects confidence.</li>
+                </ul>
+            </div>
+            <div class="card" style="border-color: #99f6e4;">
+                <h3 style="color:#0d9488;">💚 Positive Side</h3>
+                <ul class="bullet-list">
+                    <li>Support groups and motivation pages.</li>
+                    <li>Mental health awareness accounts.</li>
+                    <li>People find communities where they feel understood.</li>
+                    <li>Crisis helplines reach more people through social media.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: How Much Time We Spend -->
+    <section class="slide col">
+        <h2 class="gradient-text">How Much Time Do We Spend? ⏱️</h2>
+        <div class="highlight-box">
+            <h3>Global Average: 2 hours 20 minutes per day on social media</h3>
+            <p class="text-md" style="color:#475569; margin-top:0.3rem;">For students and teens, this number is often much higher.</p>
+        </div>
+        <ul class="bullet-list">
+            <li>That's roughly <strong>35+ days per year</strong> spent only on social media.</li>
+            <li>Most used time: morning after waking up, lunch break, and late night before sleep.</li>
+            <li>Short‑form video (Reels, Shorts, TikTok) is the biggest time consumer.</li>
+            <li>Social media is no longer "just an app" – it has become a daily habit.</li>
+        </ul>
+        <div class="quote-box">
+            "Are we controlling social media… or is it controlling us?"
+        </div>
+    </section>
+
+    <!-- Slide 9: Impact on Students -->
+    <section class="slide col">
+        <h2 class="gradient-text">Impact on Students 🎓</h2>
+        <div class="card-grid">
+            <div class="card" style="border-color: #99f6e4;">
+                <h3 style="color:#0d9488;">✅ Positives</h3>
+                <ul class="bullet-list">
+                    <li>Study groups and doubt discussion made easy.</li>
+                    <li>Educational channels for programming, exams, skills.</li>
+                    <li>Career guidance from seniors and professionals.</li>
+                    <li>Notes sharing and collaboration.</li>
+                </ul>
+            </div>
+            <div class="card" style="border-color: #fecdd3;">
+                <h3 style="color:#f43f5e;">❌ Negatives</h3>
+                <ul class="bullet-list">
+                    <li>Distraction – checking phone every few minutes.</li>
+                    <li>Multitasking (reels + notes) reduces focus.</li>
+                    <li>Procrastination: "One reel start panni, 1 hour poidum."</li>
+                    <li>Exam stress amplified by comparison with peers.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Digital Footprint & Privacy -->
+    <section class="slide col">
+        <h2 class="gradient-text">Digital Footprint & Privacy 🔍</h2>
+        <ul class="bullet-list">
+            <li>Whatever we post, like or share can stay online for a very long time.</li>
+            <li>Apps collect data: location, interests, watch time, clicks and contacts.</li>
+            <li>Future employers or colleges can sometimes check our online presence.</li>
+            <li>Think before posting: <strong>"Will I be okay if this is seen after 5 years?"</strong></li>
+            <li>Use privacy settings wisely and avoid oversharing personal details.</li>
+        </ul>
+        <div class="quote-box">
+            "The internet never forgets. Post wisely."
+        </div>
+    </section>
+
+    <!-- Slide 11: Using Social Media Smartly -->
+    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);">
+        <h2 class="gradient-text">How to Use Social Media Smartly 💡</h2>
+        <div class="timeline-step">
+            <div class="timeline-circle">1</div>
+            <div class="timeline-content">
+                <h4>Set Screen‑Time Limits</h4>
+                <p>Fix a daily limit (e.g., 1–2 hours) for social apps and stick to it.</p>
+            </div>
+        </div>
+        <div class="timeline-step">
+            <div class="timeline-circle">2</div>
+            <div class="timeline-content">
+                <h4>Curate Your Feed</h4>
+                <p>Unfollow toxic/negative pages; follow useful, educational and inspiring accounts.</p>
+            </div>
+        </div>
+        <div class="timeline-step">
+            <div class="timeline-circle">3</div>
+            <div class="timeline-content">
+                <h4>Phone‑Free Zones</h4>
+                <p>No phone during study, meals, and at least 30 minutes before sleep.</p>
+            </div>
+        </div>
+        <div class="timeline-step">
+            <div class="timeline-circle">4</div>
+            <div class="timeline-content">
+                <h4>Verify Before Sharing</h4>
+                <p>Check news from trusted sources before sharing – stop fake news.</p>
+            </div>
+        </div>
+        <div class="timeline-step">
+            <div class="timeline-circle">5</div>
+            <div class="timeline-content">
+                <h4>Use It as a Tool</h4>
+                <p>Learn, connect and grow – not just scroll for time‑pass.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Simple Framework -->
+    <section class="slide col">
+        <h2 class="gradient-text">Before You Post or Scroll 🧩</h2>
+        <div class="card-grid">
+            <div class="card" style="border-color: #fde68a;">
+                <h3 style="color:#d97706;">📤 Before Posting — Ask 3 Questions</h3>
+                <ul class="bullet-list" style="margin-top:0.5rem;">
+                    <li>Is it <strong>kind</strong>?</li>
+                    <li>Is it <strong>true</strong>?</li>
+                    <li>Is it <strong>necessary</strong>?</li>
+                </ul>
+            </div>
+            <div class="card" style="border-color: #bae6fd;">
+                <h3 style="color:#0891b2;">📥 Before Scrolling — Ask 2 Questions</h3>
+                <ul class="bullet-list" style="margin-top:0.5rem;">
+                    <li>Is this content <strong>helping me</strong> in any way?</li>
+                    <li>Can I use this same time for something <strong>better</strong>?</li>
+                </ul>
+            </div>
+        </div>
+        <div class="quote-box" style="margin-top:1.5rem;">
+            "If the content doesn't educate, inspire or make you smile — scroll past it."
+        </div>
+    </section>
+
+    <!-- Slide 13: Conclusion -->
+    <section class="slide col">
+        <h2 class="gradient-text">Conclusion 🎯</h2>
+        <div class="highlight-box">
+            <h3>Social media is just a tool — the impact depends on how YOU use it.</h3>
+        </div>
+        <ul class="bullet-list">
+            <li>Social media itself is not fully good or bad – it is a <strong>tool</strong>.</li>
+            <li>Use it for <strong>learning, opportunities and connection</strong> – not comparison and negativity.</li>
+            <li>Set limits, curate your feed, protect your privacy and verify before sharing.</li>
+            <li>Balance is the key – enjoy social media, but don't let it control your life.</li>
+        </ul>
+        <div class="quote-box">
+            "Namma phone‑a naama control panna vendiyadhu — phone namma life‑a control panna koodadhu."
+        </div>
+    </section>
+
+    <!-- Slide 14: Thank You -->
+    <section class="slide col center" style="background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #fefce8 100%);">
+        <h1 class="gradient-text" style="font-size:3.2rem; margin-bottom:1rem;">Thank You! 🙏</h1>
+        <p class="text-xl" style="color:#1e293b; font-weight:600; margin-bottom:0.5rem;">Questions or Discussion?</p>
+        <hr class="divider" style="width: 180px; margin: 0.75rem auto;">
+        <p class="text-md" style="color:#475569; margin-top:0.75rem;">Tech Talk • Social Media & Our Daily Life</p>
+        <div style="margin-top:1.5rem;">
+            <span class="tag tag-teal">Learn</span>
+            <span class="tag tag-coral">Connect</span>
+            <span class="tag tag-gold">Grow</span>
+            <span class="tag tag-blue">Wisely</span>
+        </div>
+    </section>
+
+</body>
+</html>
