@@ -7,24 +7,29 @@
         :root {
             --ig-magenta: #C32AA3;
             --ig-orange: #F77737;
+            --ig-purple: #833ab4;
             --yt-red: #FF0000;
             --fb-blue: #1877F2;
             --wa-green: #25D366;
             --snap-yellow: #FFFC00;
-            --tiktok-cyan: #69C9D0;
             --tiktok-pink: #EE1D52;
-            --twitter-blue: #1DA1F2;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a68;
-            --text-muted: #8888a4;
-            --border-color: #e8e8f0;
+            --tiktok-cyan: #69C9D0;
+
+            --bg-main: #020617;
+            --bg-slide: #020617;
+            --bg-surface: #020617;
+            --bg-card: #020617;
+            --border-soft: #1e293b;
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-            background: #f4f4f8;
+            background: radial-gradient(circle at top, #1f2937 0%, #020617 55%, #000000 100%);
             color: var(--text-primary);
             overflow-x: hidden;
         }
@@ -37,12 +42,20 @@
             flex-shrink: 0;
             position: relative;
             overflow: hidden;
-            background: #ffffff;
-            border-radius: 14px;
-            box-shadow: 0 12px 40px rgba(26, 26, 46, 0.08);
-            padding: 3.5rem 4rem;
+            background:
+                radial-gradient(circle at top left, rgba(131,58,180,0.18) 0, transparent 55%),
+                radial-gradient(circle at bottom right, rgba(37,211,102,0.16) 0, transparent 60%),
+                radial-gradient(circle at top right, rgba(248,113,113,0.16) 0, transparent 55%),
+                var(--bg-slide);
+            border-radius: 18px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.7);
+            padding: 3.2rem 3.8rem;
             flex-direction: column;
+            border: 1px solid rgba(15,23,42,0.9);
         }
+
+        .col { display: flex; flex-direction: column; }
+        .center { justify-content: center; align-items: center; text-align: center; }
 
         h1, h2, h3, h4 {
             font-weight: 800;
@@ -50,51 +63,41 @@
             margin: 0;
         }
 
+        h1 { font-size: 3.3rem; }
         h2 { font-size: 2.1rem; margin-bottom: 1.2rem; }
         h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
 
-        .col { display: flex; flex-direction: column; }
-        .center { justify-content: center; align-items: center; text-align: center; }
+        .text-xl { font-size: 1.2rem; }
+        .text-lg { font-size: 1.05rem; }
+        .text-md { font-size: 0.95rem; }
+        .text-sm { font-size: 0.82rem; }
 
-        .text-xl { font-size: 1.25rem; }
-        .text-lg { font-size: 1.1rem; }
-        .text-md { font-size: 1rem; }
-        .text-sm { font-size: 0.85rem; }
-
-        /* ====== NEW GRADIENT: Instagram-style warm gradient ====== */
         .gradient-ig {
-            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            background: linear-gradient(135deg, #f97316 0%, #fb7185 30%, #C32AA3 65%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
         }
 
-        /* ====== Cool blue-cyan gradient ====== */
         .gradient-cool {
-            background: linear-gradient(135deg, #1877F2 0%, #1DA1F2 50%, #69C9D0 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 40%, #4f46e5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
         }
 
-        /* ====== Green-teal gradient ====== */
         .gradient-green {
-            background: linear-gradient(135deg, #25D366 0%, #0d9488 100%);
+            background: linear-gradient(135deg, #22c55e 0%, #22d3ee 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
         }
 
-        /* ====== Red-pink gradient ====== */
         .gradient-danger {
-            background: linear-gradient(135deg, #EE1D52 0%, #ff416c 100%);
+            background: linear-gradient(135deg, #f97316 0%, #fb7185 40%, #f43f5e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
         }
 
         .bullet-list {
@@ -104,10 +107,10 @@
 
         .bullet-list li {
             margin-bottom: 0.7rem;
-            padding-left: 1.8rem;
+            padding-left: 1.7rem;
             position: relative;
             color: var(--text-secondary);
-            font-size: 0.98rem;
+            font-size: 0.96rem;
             line-height: 1.6;
             font-weight: 500;
         }
@@ -116,53 +119,56 @@
             content: "●";
             position: absolute;
             left: 0;
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             top: 0.45rem;
+            color: #38bdf8;
         }
 
-        .bullet-ig li::before { color: #C32AA3; }
-        .bullet-green li::before { color: #25D366; }
-        .bullet-red li::before { color: #EE1D52; }
-        .bullet-blue li::before { color: #1877F2; }
-        .bullet-gold li::before { color: #F77737; }
+        .bullet-ig li::before { color: #fb7185; }
+        .bullet-green li::before { color: #22c55e; }
+        .bullet-red li::before { color: #f97316; }
+        .bullet-blue li::before { color: #38bdf8; }
+        .bullet-gold li::before { color: #facc15; }
 
         .highlight-box {
-            padding: 1.3rem 1.5rem;
+            padding: 1.2rem 1.4rem;
             border-radius: 14px;
             margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, rgba(15,23,42,0.85), rgba(15,23,42,0.95));
+            border: 1px solid rgba(148,163,184,0.5);
         }
 
         .highlight-ig {
-            background: linear-gradient(135deg, rgba(131, 58, 180, 0.08) 0%, rgba(253, 29, 29, 0.06) 50%, rgba(252, 176, 69, 0.06) 100%);
-            border: 2px solid #C32AA3;
+            border-color: rgba(248,113,113,0.7);
+            box-shadow: 0 10px 30px rgba(248,113,113,0.25);
         }
 
         .highlight-green {
-            background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(13, 148, 136, 0.06) 100%);
-            border: 2px solid #25D366;
+            border-color: rgba(34,197,94,0.7);
+            box-shadow: 0 10px 30px rgba(34,197,94,0.25);
         }
 
         .highlight-blue {
-            background: linear-gradient(135deg, rgba(24, 119, 242, 0.08) 0%, rgba(29, 161, 242, 0.05) 100%);
-            border: 2px solid #1877F2;
+            border-color: rgba(56,189,248,0.7);
+            box-shadow: 0 10px 30px rgba(56,189,248,0.25);
         }
 
         .highlight-red {
-            background: linear-gradient(135deg, rgba(238, 29, 82, 0.08) 0%, rgba(255, 65, 108, 0.05) 100%);
-            border: 2px solid #EE1D52;
+            border-color: rgba(249,115,22,0.7);
+            box-shadow: 0 10px 30px rgba(249,115,22,0.25);
         }
 
         .highlight-gold {
-            background: linear-gradient(135deg, rgba(247, 119, 55, 0.08) 0%, rgba(252, 176, 69, 0.06) 100%);
-            border: 2px solid #F77737;
+            border-color: rgba(250,204,21,0.7);
+            box-shadow: 0 10px 30px rgba(250,204,21,0.25);
         }
 
         .card {
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            padding: 1.3rem;
+            background: radial-gradient(circle at top left, rgba(15,23,42,0.9) 0, rgba(15,23,42,0.98) 55%);
+            border: 1px solid rgba(51,65,85,0.9);
+            padding: 1.2rem 1.3rem;
             border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(26, 26, 46, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         .card-grid {
@@ -189,124 +195,122 @@
             font-weight: 700;
             font-size: 0.95rem;
             flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
         }
 
-        .tc-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
-        .tc-blue { background: linear-gradient(135deg, #1877F2, #1DA1F2); }
-        .tc-green { background: linear-gradient(135deg, #25D366, #0d9488); }
-        .tc-red { background: linear-gradient(135deg, #EE1D52, #ff416c); }
-        .tc-gold { background: linear-gradient(135deg, #F77737, #fcb045); }
+        .tc-ig { background: conic-gradient(from 200deg, #facc15, #fb7185, #C32AA3, #a855f7, #f97316); }
+        .tc-blue { background: conic-gradient(from 160deg, #38bdf8, #2563eb, #4f46e5); }
+        .tc-green { background: conic-gradient(from 160deg, #22c55e, #22d3ee); }
+        .tc-red { background: conic-gradient(from 160deg, #f97316, #fb7185, #f97316); }
+        .tc-gold { background: conic-gradient(from 160deg, #facc15, #f97316, #facc15); }
 
         .timeline-content h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.2rem;
+            font-size: 1.02rem;
+            margin-bottom: 0.18rem;
+            color: #e5e7eb;
         }
 
         .timeline-content p {
             color: var(--text-secondary);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         .quote-box {
-            padding: 1rem 1.5rem;
+            padding: 1rem 1.4rem;
             border-radius: 0 14px 14px 0;
             margin-top: 1rem;
             font-style: italic;
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 600;
+            background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.98));
+            border-left: 4px solid #f97316;
         }
 
-        .quote-ig {
-            background: linear-gradient(135deg, rgba(131, 58, 180, 0.06), rgba(252, 176, 69, 0.06));
-            border-left: 5px solid #C32AA3;
-        }
-
-        .quote-red {
-            background: linear-gradient(135deg, rgba(238, 29, 82, 0.06), rgba(255, 65, 108, 0.04));
-            border-left: 5px solid #EE1D52;
-        }
-
-        .quote-gold {
-            background: linear-gradient(135deg, rgba(247, 119, 55, 0.06), rgba(252, 176, 69, 0.04));
-            border-left: 5px solid #F77737;
-        }
-
-        .quote-green {
-            background: linear-gradient(135deg, rgba(37, 211, 102, 0.06), rgba(13, 148, 136, 0.04));
-            border-left: 5px solid #25D366;
-        }
+        .quote-ig { border-left-color: #fb7185; }
+        .quote-red { border-left-color: #f97316; }
+        .quote-gold { border-left-color: #facc15; }
+        .quote-green { border-left-color: #22c55e; }
 
         .platform-tag {
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
-            padding: 0.25rem 0.75rem;
+            padding: 0.28rem 0.8rem;
             border-radius: 999px;
             font-size: 0.78rem;
             font-weight: 700;
             margin-right: 0.35rem;
             margin-bottom: 0.35rem;
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(148,163,184,0.7);
         }
 
-        .tag-ig { background: #fce4ec; color: #C32AA3; border: 1px solid #f8bbd0; }
-        .tag-yt { background: #ffebee; color: #FF0000; border: 1px solid #ffcdd2; }
-        .tag-fb { background: #e3f2fd; color: #1877F2; border: 1px solid #bbdefb; }
-        .tag-wa { background: #e8f5e9; color: #128C7E; border: 1px solid #c8e6c9; }
-        .tag-tt { background: #e0f7fa; color: #010101; border: 1px solid #b2ebf2; }
-        .tag-x { background: #f5f5f5; color: #000000; border: 1px solid #e0e0e0; }
-        .tag-snap { background: #fffde7; color: #9e8600; border: 1px solid #fff9c4; }
+        .tag-ig { color: #fb7185; border-color: rgba(248,113,113,0.8); }
+        .tag-yt { color: #fecaca; border-color: rgba(248,113,113,0.8); }
+        .tag-fb { color: #bfdbfe; border-color: rgba(59,130,246,0.8); }
+        .tag-wa { color: #bbf7d0; border-color: rgba(34,197,94,0.8); }
+        .tag-tt { color: #f9a8d4; border-color: rgba(236,72,153,0.8); }
+        .tag-x { color: #e5e7eb; border-color: rgba(148,163,184,0.9); }
 
         .table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.84rem;
         }
 
         .table th, .table td {
-            border: 1px solid #e8e8f0;
+            border: 1px solid rgba(51,65,85,0.9);
             padding: 0.45rem 0.7rem;
             text-align: left;
         }
 
         .table th {
-            background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 100%);
-            color: #1a1a2e;
-            font-weight: 700;
+            background: radial-gradient(circle at top, rgba(15,23,42,0.85), rgba(15,23,42,0.98));
+            color: #e5e7eb;
+        }
+
+        .table td {
+            background: rgba(15,23,42,0.96);
+            color: var(--text-secondary);
         }
 
         .emoji-big {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.3rem;
+            margin-bottom: 0.6rem;
         }
 
         .divider-ig {
-            height: 3px;
-            background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+            height: 2px;
+            background: linear-gradient(90deg, #f97316, #fb7185, #C32AA3, #a855f7);
             border: none;
-            border-radius: 2px;
-            margin: 0.75rem 0;
+            border-radius: 999px;
+            margin: 0.65rem 0;
         }
 
         .divider-cool {
-            height: 3px;
-            background: linear-gradient(90deg, #1877F2, #1DA1F2, #69C9D0);
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8, #2563eb, #4f46e5);
             border: none;
-            border-radius: 2px;
-            margin: 0.75rem 0;
+            border-radius: 999px;
+            margin: 0.65rem 0;
         }
     </style>
 </head>
 <body>
 
-    <!-- ============ SLIDE 1: TITLE ============ -->
-    <section class="slide col center" style="background: linear-gradient(135deg, #ffffff 0%, #fce4ec 30%, #e3f2fd 60%, #e8f5e9 100%);">
+    <!-- SLIDE 1: TITLE -->
+    <section class="slide col center">
         <p class="emoji-big">📱💬🌍</p>
-        <h1 class="gradient-ig" style="font-size: 3.4rem; margin-bottom: 0.75rem;">Social Media & Our Daily Life</h1>
-        <hr class="divider-ig" style="width: 280px;">
-        <p class="text-xl" style="color:#1a1a2e; font-weight:600; margin-top:0.75rem; margin-bottom:0.5rem;">How social media shapes the way we live, think and connect</p>
-        <p class="text-md" style="color:#4a4a68; margin-bottom:1.5rem;">A simple guide to the good, the bad and the smart way</p>
+        <h1 class="gradient-ig" style="margin-bottom: 0.5rem;">Social Media & Our Daily Life</h1>
+        <hr class="divider-ig" style="width: 260px;">
+        <p class="text-xl" style="color:#e5e7eb; font-weight:600; margin-top:0.6rem; margin-bottom:0.4rem;">
+            How social media shapes the way we live, think and connect
+        </p>
+        <p class="text-md" style="color:#9ca3af; margin-bottom:1.4rem;">
+            A simple guide to the good, the bad and the smart way to use it
+        </p>
         <div>
             <span class="platform-tag tag-ig">📸 Instagram</span>
             <span class="platform-tag tag-wa">💬 WhatsApp</span>
@@ -317,12 +321,12 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 2: WHAT IS SOCIAL MEDIA ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 100%);">
+    <!-- SLIDE 2: WHAT IS SOCIAL MEDIA -->
+    <section class="slide col">
         <h2 class="gradient-ig">What is Social Media? 🌐</h2>
         <div class="highlight-box highlight-ig">
-            <h3 style="color:#833ab4;">Simple Definition</h3>
-            <p class="text-md" style="color:#4a4a68; margin-top:0.3rem;">
+            <h3 style="color:#f97316;">Simple Definition</h3>
+            <p class="text-md" style="color:#e5e7eb; margin-top:0.25rem;">
                 Online platforms where people create, share and interact with content and each other – from anywhere, anytime.
             </p>
         </div>
@@ -331,38 +335,38 @@
             <li>Examples: WhatsApp, Instagram, YouTube, Snapchat, Facebook, TikTok, X (Twitter).</li>
             <li>Share photos, videos, messages, stories and live streams in seconds.</li>
             <li>Anyone can become a creator – not just celebrities or big companies.</li>
-            <li>Over <strong>5 billion people</strong> worldwide use social media today.</li>
+            <li>Today, over <strong>5 billion people</strong> use social media globally.</li>
         </ul>
     </section>
 
-    <!-- ============ SLIDE 3: WHY PEOPLE USE ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);">
+    <!-- SLIDE 3: WHY WE USE -->
+    <section class="slide col">
         <h2 class="gradient-cool">Why Do We Use Social Media? 🤳</h2>
         <div class="card-grid">
-            <div class="card" style="border-color: #bbdefb;">
-                <h3 style="color:#1877F2;">🤝 Stay Connected</h3>
+            <div class="card">
+                <h3 style="color:#38bdf8;">🤝 Stay Connected</h3>
                 <ul class="bullet-list bullet-blue">
                     <li>Chat with friends and family anytime, anywhere.</li>
                     <li>Share moments through photos, stories and status.</li>
                     <li>Join groups with similar interests and hobbies.</li>
                 </ul>
             </div>
-            <div class="card" style="border-color: #ffcdd2;">
-                <h3 style="color:#EE1D52;">🎬 Entertainment</h3>
+            <div class="card">
+                <h3 style="color:#fb7185;">🎬 Entertainment</h3>
                 <ul class="bullet-list bullet-red">
                     <li>Short videos, memes, music, gaming clips and vlogs.</li>
                     <li>Reels, Shorts, TikToks – endless fun content.</li>
                 </ul>
             </div>
-            <div class="card" style="border-color: #c8e6c9;">
-                <h3 style="color:#128C7E;">📚 Information & Learning</h3>
+            <div class="card">
+                <h3 style="color:#22c55e;">📚 Information & Learning</h3>
                 <ul class="bullet-list bullet-green">
                     <li>News, tech updates, sports highlights live.</li>
                     <li>Study tips, coding tutorials, exam strategies.</li>
                 </ul>
             </div>
-            <div class="card" style="border-color: #ffe0b2;">
-                <h3 style="color:#F77737;">🚀 Opportunities</h3>
+            <div class="card">
+                <h3 style="color:#facc15;">🚀 Opportunities</h3>
                 <ul class="bullet-list bullet-gold">
                     <li>Showcase talents (art, music, coding, gaming).</li>
                     <li>Build personal brand, find jobs and clients.</li>
@@ -371,7 +375,7 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 4: POPULAR PLATFORMS ============ -->
+    <!-- SLIDE 4: PLATFORMS TABLE -->
     <section class="slide col">
         <h2 class="gradient-ig">Popular Social Media Platforms 📲</h2>
         <table class="table">
@@ -381,70 +385,70 @@
                 <th>Content Type</th>
             </tr>
             <tr>
-                <td><strong style="color:#25D366;">💬 WhatsApp</strong></td>
+                <td><strong style="color:#22c55e;">WhatsApp</strong></td>
                 <td>Messaging, calls, groups</td>
                 <td>Text, voice, video, files</td>
             </tr>
             <tr>
-                <td><strong style="color:#C32AA3;">📸 Instagram</strong></td>
+                <td><strong style="color:#C32AA3;">Instagram</strong></td>
                 <td>Photo/video sharing, reels</td>
                 <td>Images, stories, short videos</td>
             </tr>
             <tr>
-                <td><strong style="color:#FF0000;">▶️ YouTube</strong></td>
+                <td><strong style="color:#FF0000;">YouTube</strong></td>
                 <td>Video streaming, learning</td>
                 <td>Long/short videos, livestreams</td>
             </tr>
             <tr>
-                <td><strong style="color:#1877F2;">👥 Facebook</strong></td>
+                <td><strong style="color:#1877F2;">Facebook</strong></td>
                 <td>Social networking, groups</td>
                 <td>Posts, events, marketplace</td>
             </tr>
             <tr>
-                <td><strong style="color:#000;">✖ X (Twitter)</strong></td>
+                <td><strong style="color:#e5e7eb;">X (Twitter)</strong></td>
                 <td>News, opinions, trends</td>
                 <td>Short text, images, threads</td>
             </tr>
             <tr>
-                <td><strong style="color:#EE1D52;">🎵 TikTok</strong></td>
+                <td><strong style="color:#EE1D52;">TikTok</strong></td>
                 <td>Short video entertainment</td>
                 <td>15s–10min creative videos</td>
             </tr>
         </table>
     </section>
 
-    <!-- ============ SLIDE 5: POSITIVE IMPACTS ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);">
+    <!-- SLIDE 5: POSITIVE IMPACT -->
+    <section class="slide col">
         <h2 class="gradient-green">Positive Impact of Social Media 👍</h2>
         <ul class="bullet-list bullet-green">
-            <li><strong style="color:#0d9488;">Easy Communication:</strong> Distance doesn't matter – instant messages and video calls worldwide.</li>
-            <li><strong style="color:#0d9488;">Learning Made Simple:</strong> Free tutorials, courses and educational content on YouTube, Instagram etc.</li>
-            <li><strong style="color:#0d9488;">Career Opportunities:</strong> Online businesses, freelancing, content creation and professional networking.</li>
-            <li><strong style="color:#0d9488;">Global Awareness:</strong> Social issues, health tips, career guidance and breaking news spread faster.</li>
-            <li><strong style="color:#0d9488;">Support Communities:</strong> Groups for fitness, mental health, hobbies, coding help and motivation.</li>
-            <li><strong style="color:#0d9488;">Voice for Everyone:</strong> Anyone can share opinions, art and ideas – no need for TV or newspaper.</li>
+            <li><strong style="color:#4ade80;">Easy Communication:</strong> Distance doesn't matter – instant messages and video calls worldwide.</li>
+            <li><strong style="color:#4ade80;">Learning Made Simple:</strong> Free tutorials, courses and educational content on YouTube, Instagram etc.</li>
+            <li><strong style="color:#4ade80;">Career Opportunities:</strong> Online businesses, freelancing, content creation and professional networking.</li>
+            <li><strong style="color:#4ade80;">Global Awareness:</strong> Social issues, health tips, career guidance and breaking news spread faster.</li>
+            <li><strong style="color:#4ade80;">Support Communities:</strong> Groups for fitness, mental health, hobbies, coding help and motivation.</li>
+            <li><strong style="color:#4ade80;">Voice for Everyone:</strong> Anyone can share opinions, art and ideas with the world.</li>
         </ul>
     </section>
 
-    <!-- ============ SLIDE 6: NEGATIVE IMPACTS ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%);">
+    <!-- SLIDE 6: NEGATIVE IMPACT -->
+    <section class="slide col">
         <h2 class="gradient-danger">Negative Impact of Social Media 👎</h2>
         <ul class="bullet-list bullet-red">
-            <li><strong style="color:#EE1D52;">Addiction & Time Waste:</strong> "Just 5 minutes" scrolling easily becomes 1–2 hours without realizing.</li>
-            <li><strong style="color:#EE1D52;">Comparison Trap:</strong> Seeing "perfect" lives online reduces self‑confidence and happiness.</li>
-            <li><strong style="color:#EE1D52;">Sleep Problems:</strong> Late‑night scrolling disturbs sleep quality and next‑day concentration.</li>
-            <li><strong style="color:#EE1D52;">Fake News:</strong> Wrong information spreads fast when we share without verifying the source.</li>
-            <li><strong style="color:#EE1D52;">Cyberbullying:</strong> Negative comments, trolling and online harassment affecting mental peace.</li>
-            <li><strong style="color:#EE1D52;">Privacy Risks:</strong> Personal data collected by apps and sometimes misused or leaked.</li>
+            <li><strong style="color:#fb923c;">Addiction & Time Waste:</strong> "Just 5 minutes" scrolling easily becomes 1–2 hours.</li>
+            <li><strong style="color:#fb923c;">Comparison Trap:</strong> Seeing "perfect" lives online reduces self‑confidence.</li>
+            <li><strong style="color:#fb923c;">Sleep Problems:</strong> Late‑night scrolling disturbs sleep and next‑day focus.</li>
+            <li><strong style="color:#fb923c;">Fake News:</strong> Wrong information spreads fast when shared without checking.</li>
+            <li><strong style="color:#fb923c;">Cyberbullying:</strong> Negative comments and trolling affect mental peace.</li>
+            <li><strong style="color:#fb923c;">Privacy Risks:</strong> Personal data collected and sometimes misused.</li>
         </ul>
     </section>
 
-    <!-- ============ SLIDE 7: MENTAL HEALTH ============ -->
+    <!-- SLIDE 7: MENTAL HEALTH -->
     <section class="slide col">
         <h2 class="gradient-ig">Social Media & Mental Health 🧠</h2>
         <div class="card-grid">
-            <div class="card" style="border-color: #ffcdd2;">
-                <h3 style="color:#EE1D52;">⚠️ Possible Problems</h3>
+            <div class="card">
+                <h3 style="color:#fb7185;">⚠️ Possible Problems</h3>
                 <ul class="bullet-list bullet-red">
                     <li>Overuse linked with stress, anxiety and low mood.</li>
                     <li>Constantly checking likes/comments creates pressure.</li>
@@ -452,8 +456,8 @@
                     <li>Cyberbullying directly impacts confidence.</li>
                 </ul>
             </div>
-            <div class="card" style="border-color: #c8e6c9;">
-                <h3 style="color:#25D366;">💚 Positive Side</h3>
+            <div class="card">
+                <h3 style="color:#22c55e;">💚 Positive Side</h3>
                 <ul class="bullet-list bullet-green">
                     <li>Support groups and motivational pages help people.</li>
                     <li>Mental health awareness reaches more people.</li>
@@ -464,55 +468,55 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 8: TIME SPENT ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #fff8e1 100%);">
+    <!-- SLIDE 8: TIME SPENT -->
+    <section class="slide col">
         <h2 class="gradient-ig">How Much Time Do We Spend? ⏱️</h2>
         <div class="highlight-box highlight-gold">
-            <h3 style="color:#F77737;">Global Average: ~2 hours 20 minutes per day on social media</h3>
-            <p class="text-md" style="color:#4a4a68; margin-top:0.3rem;">For students and teens, this is often much higher.</p>
+            <h3 style="color:#fde68a;">Global Average: ~2 hours 20 minutes per day on social media</h3>
+            <p class="text-md" style="color:#e5e7eb; margin-top:0.3rem;">For students and teens, this is often much higher.</p>
         </div>
         <ul class="bullet-list bullet-gold">
-            <li>That's roughly <strong>35+ days per year</strong> spent only scrolling social media.</li>
+            <li>That's roughly <strong>35+ days per year</strong> spent only scrolling.</li>
             <li>Most used times: morning after waking, lunch break, and late night before sleep.</li>
-            <li>Short‑form video (Reels, Shorts, TikTok) is the biggest time consumer today.</li>
-            <li>Social media is no longer "just an app" – it has become a daily habit for billions.</li>
+            <li>Short‑form video (Reels, Shorts, TikTok) is the biggest time consumer.</li>
+            <li>Social media is no longer "just an app" – it has become a daily habit.</li>
         </ul>
         <div class="quote-box quote-gold">
             "Are we controlling social media… or is it controlling us? 🤔"
         </div>
     </section>
 
-    <!-- ============ SLIDE 9: IMPACT ON STUDENTS ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);">
+    <!-- SLIDE 9: STUDENTS -->
+    <section class="slide col">
         <h2 class="gradient-cool">Impact on Students 🎓</h2>
         <div class="card-grid">
-            <div class="card" style="border-color: #c8e6c9;">
-                <h3 style="color:#25D366;">✅ Positives</h3>
+            <div class="card">
+                <h3 style="color:#22c55e;">✅ Positives</h3>
                 <ul class="bullet-list bullet-green">
                     <li>Study groups and doubt discussion made easy.</li>
                     <li>Educational channels for programming, exams, skills.</li>
                     <li>Career guidance from seniors and professionals.</li>
-                    <li>Notes sharing and online collaboration tools.</li>
+                    <li>Notes sharing and online collaboration.</li>
                 </ul>
             </div>
-            <div class="card" style="border-color: #ffcdd2;">
-                <h3 style="color:#EE1D52;">❌ Negatives</h3>
+            <div class="card">
+                <h3 style="color:#fb7185;">❌ Negatives</h3>
                 <ul class="bullet-list bullet-red">
                     <li>Distraction – checking phone every few minutes.</li>
-                    <li>Multitasking (reels + study) reduces focus badly.</li>
-                    <li>Procrastination: "One reel start panni, 1 hour poidum."</li>
-                    <li>Exam stress amplified by comparing with peers.</li>
+                    <li>Multitasking (reels + study) reduces focus.</li>
+                    <li>“One reel start panni, 1 hour poidum” feeling.</li>
+                    <li>Exam stress amplified by comparison with peers.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 10: DIGITAL FOOTPRINT ============ -->
+    <!-- SLIDE 10: DIGITAL FOOTPRINT -->
     <section class="slide col">
         <h2 class="gradient-cool">Digital Footprint & Privacy 🔍</h2>
         <ul class="bullet-list bullet-blue">
-            <li>Whatever we post, like or share can stay online <strong>forever</strong>.</li>
-            <li>Apps collect data: location, interests, watch time, clicks, contacts and behavior.</li>
+            <li>Whatever we post, like or share can stay online <strong>for a very long time</strong>.</li>
+            <li>Apps collect data: location, interests, watch time, clicks and contacts.</li>
             <li>Future employers or colleges can sometimes check our online presence.</li>
             <li>Think before posting: <strong>"Will I be okay if this is seen after 5 years?"</strong></li>
             <li>Use privacy settings wisely and avoid oversharing personal details.</li>
@@ -522,76 +526,76 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 11: USE SMARTLY ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 100%);">
+    <!-- SLIDE 11: USE SMARTLY -->
+    <section class="slide col">
         <h2 class="gradient-ig">How to Use Social Media Smartly 💡</h2>
         <div class="timeline-step">
             <div class="timeline-circle tc-ig">1</div>
             <div class="timeline-content">
-                <h4 style="color:#833ab4;">Set Screen‑Time Limits</h4>
+                <h4>Set Screen‑Time Limits</h4>
                 <p>Fix a daily limit (e.g., 1–2 hours) for social apps and stick to it.</p>
             </div>
         </div>
         <div class="timeline-step">
             <div class="timeline-circle tc-blue">2</div>
             <div class="timeline-content">
-                <h4 style="color:#1877F2;">Curate Your Feed</h4>
+                <h4>Curate Your Feed</h4>
                 <p>Unfollow toxic/negative pages; follow useful, educational and inspiring accounts.</p>
             </div>
         </div>
         <div class="timeline-step">
             <div class="timeline-circle tc-green">3</div>
             <div class="timeline-content">
-                <h4 style="color:#25D366;">Phone‑Free Zones</h4>
+                <h4>Phone‑Free Zones</h4>
                 <p>No phone during study, meals, and at least 30 minutes before sleep.</p>
             </div>
         </div>
         <div class="timeline-step">
             <div class="timeline-circle tc-red">4</div>
             <div class="timeline-content">
-                <h4 style="color:#EE1D52;">Verify Before Sharing</h4>
+                <h4>Verify Before Sharing</h4>
                 <p>Check news from trusted sources before sharing – stop spreading fake news.</p>
             </div>
         </div>
         <div class="timeline-step">
             <div class="timeline-circle tc-gold">5</div>
             <div class="timeline-content">
-                <h4 style="color:#F77737;">Use It as a Tool</h4>
+                <h4>Use It as a Tool</h4>
                 <p>Learn, connect and grow – not just endless scrolling for time‑pass.</p>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 12: BEFORE YOU POST/SCROLL ============ -->
+    <!-- SLIDE 12: FRAMEWORK -->
     <section class="slide col">
         <h2 class="gradient-ig">Before You Post or Scroll 🧩</h2>
         <div class="card-grid">
-            <div class="card" style="border-color: #ffe0b2;">
-                <h3 style="color:#F77737;">📤 Before Posting — Ask 3 Questions</h3>
-                <ul class="bullet-list bullet-gold" style="margin-top:0.5rem;">
+            <div class="card">
+                <h3 style="color:#facc15;">📤 Before Posting — Ask 3 Questions</h3>
+                <ul class="bullet-list bullet-gold" style="margin-top:0.4rem;">
                     <li>Is it <strong>kind</strong>?</li>
                     <li>Is it <strong>true</strong>?</li>
                     <li>Is it <strong>necessary</strong>?</li>
                 </ul>
             </div>
-            <div class="card" style="border-color: #bbdefb;">
-                <h3 style="color:#1877F2;">📥 Before Scrolling — Ask 2 Questions</h3>
-                <ul class="bullet-list bullet-blue" style="margin-top:0.5rem;">
+            <div class="card">
+                <h3 style="color:#38bdf8;">📥 Before Scrolling — Ask 2 Questions</h3>
+                <ul class="bullet-list bullet-blue" style="margin-top:0.4rem;">
                     <li>Is this content <strong>helping me</strong> in any way?</li>
                     <li>Can I use this same time for something <strong>better</strong>?</li>
                 </ul>
             </div>
         </div>
-        <div class="quote-box quote-ig" style="margin-top:1.2rem;">
+        <div class="quote-box quote-ig" style="margin-top:1.1rem;">
             "If the content doesn't educate, inspire or make you smile — scroll past it. ✨"
         </div>
     </section>
 
-    <!-- ============ SLIDE 13: CONCLUSION ============ -->
-    <section class="slide col" style="background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);">
+    <!-- SLIDE 13: CONCLUSION -->
+    <section class="slide col">
         <h2 class="gradient-green">Conclusion 🎯</h2>
         <div class="highlight-box highlight-green">
-            <h3 style="color:#0d9488;">Social media is just a tool — the impact depends on how YOU use it.</h3>
+            <h3 style="color:#bbf7d0;">Social media is just a tool — the impact depends on how YOU use it.</h3>
         </div>
         <ul class="bullet-list bullet-green">
             <li>Social media itself is not fully good or bad – it is a <strong>powerful tool</strong>.</li>
@@ -604,13 +608,13 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 14: THANK YOU ============ -->
-    <section class="slide col center" style="background: linear-gradient(135deg, #ffffff 0%, #fce4ec 25%, #e3f2fd 50%, #e8f5e9 75%, #fff8e1 100%);">
+    <!-- SLIDE 14: THANK YOU -->
+    <section class="slide col center">
         <p class="emoji-big">🙏✨🎉</p>
-        <h1 class="gradient-ig" style="font-size:3.2rem; margin-bottom:0.75rem;">Thank You!</h1>
+        <h1 class="gradient-ig" style="margin-bottom:0.5rem;">Thank You!</h1>
         <hr class="divider-ig" style="width: 200px;">
-        <p class="text-xl" style="color:#1a1a2e; font-weight:600; margin-top:0.75rem; margin-bottom:0.5rem;">Questions or Discussion?</p>
-        <p class="text-md" style="color:#4a4a68; margin-bottom:1.5rem;">Tech Talk • Social Media & Our Daily Life</p>
+        <p class="text-xl" style="color:#e5e7eb; font-weight:600; margin-top:0.6rem; margin-bottom:0.4rem;">Questions or Discussion?</p>
+        <p class="text-md" style="color:#9ca3af; margin-bottom:1.3rem;">Tech Talk • Social Media & Our Daily Life</p>
         <div>
             <span class="platform-tag tag-ig">📸 Learn</span>
             <span class="platform-tag tag-wa">💬 Connect</span>
